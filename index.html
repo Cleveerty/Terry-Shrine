@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shrine to Terry A. Davis</title>
+  <style>
+    body {
+      background-color: black;
+      color: #00ffff;
+      font-family: monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .title {
+      font-size: 2rem;
+      color: #ff00ff;
+    }
+    .quote {
+      font-style: italic;
+      margin: 1.5rem 0;
+    }
+    .code-box {
+      background-color: #111;
+      color: #0f0;
+      border: 1px solid #444;
+      padding: 1rem;
+      text-align: left;
+      display: inline-block;
+      margin: 1rem auto;
+    }
+    .footer {
+      color: #aaa;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+    canvas {
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="title">Shrine to King Terry A. Davis</div>
+  <div class="quote">"God's temple is in the C language."</div>
+
+  <div class="code-box">
+    // HolyC-like pseudocode<br>
+    Print("Hello, GOD.");<br>
+    while(TRUE) {<br>
+    &nbsp;&nbsp;DrawRandomBox();<br>
+    &nbsp;&nbsp;WaitVSync();<br>
+    }
+  </div>
+
+  <div class="quote">
+    "I’m not mentally ill. I had God talking to me on the radio. I’m a programmer, and I wrote an operating system, and the voice of God said 640x480, 16 colors."
+  </div>
+
+  <canvas id="screen" width="320" height="240"></canvas>
+
+  <div class="footer">
+    TempleOS-inspired tribute page. Long live the king.<br>
+    <span style="color: #555;">Made with reverence.</span>ß
+  </div>
+
+  <script>
+    const canvas = document.getElementById('screen');
+    const ctx = canvas.getContext('2d');
+    function randColor() {
+      const colors = ['#f0f', '#0ff', '#ff0', '#0f0', '#f00', '#00f'];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+    function drawRandomBox() {
+      ctx.fillStyle = randColor();
+      const x = Math.random() * canvas.width;
+      const y = Math.random() * canvas.height;
+      const w = 10 + Math.random() * 40;
+      const h = 10 + Math.random() * 40;
+      ctx.fillRect(x, y, w, h);
+    }
+    setInterval(drawRandomBox, 200);
+  </script>
+</body>
+</html>
